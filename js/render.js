@@ -60,6 +60,7 @@ function Render( ctx, camera ) {
 
     /**
      * Render object from meshes.js file
+     *
      * @param arrayOfPoints - mesh object *see meshes.js
      * @param x - offset
      * @param y - offset
@@ -82,6 +83,8 @@ function Render( ctx, camera ) {
             this.ctx.strokeStyle="#FFFFFF";
             this.ctx.lineWidth=2;
             this.ctx.stroke();
+            this.ctx.fillStyle = "rgba(255,255,255,0.05)";
+            this.ctx.fill();
         }
 
         this.ctx.restore();

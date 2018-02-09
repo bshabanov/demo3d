@@ -2,10 +2,10 @@
  * MESHES
  */
 
+/// Cube
 var size = 100;
 var depth = -100;
 
-/// Cube
 var cube = [
     /// Back
     new Point(0, 0, 0),
@@ -40,15 +40,6 @@ var plane = [
     new Point( paneHalfSize, 0, paneHalfSize ),
     new Point( -paneHalfSize, 0, paneHalfSize ),
     new Point( -paneHalfSize, 0, -paneHalfSize )
-];
-
-/// Object
-var obj = [
-    new Point( 0, 500, -600 ),
-    new Point( 0, 500, -700 ),
-    new Point( 100, 500, -700 ),
-    new Point( 100, 500, -600 ),
-    new Point( 0, 500, -600 )
 ];
 
 var tree = [
