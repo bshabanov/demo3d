@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Demo</title>
+    <script src="js/utilities.js"></script>
+    <script src="js/point.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/meshes.js"></script>
+    <style>
+        html, body { padding: 0px; margin: 0px; overflow: hidden; }
+        canvas { cursor: none;}
+    </style>
+</head>
+<body>
+    <canvas id="scene" width="100%" height="100%" style="background:black"></canvas>
+    <script>
+        (function(){
+            /// Setup canvas
+            var canvas = document.getElementById("scene");
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            var ctx = canvas.getContext('2d');
+
+            /// Resize canvas
+            ctx.canvas.width  = window.innerWidth;
+            ctx.canvas.height = window.innerHeight;
+
+            /// Create camera
+            var cameraPosition = new Point( 50, 50, 200 );
+            var cameraOrientation = new Point( 0, 0, 0 );
+            var camera = new Camera( cameraPosition, cameraOrientation );
+            var render = new Render( ctx, camera );
+
+            function loop() {
+                /// Clear canvas
+                ctx.clearRect(0, 0, width, height);
+
+                /// Render place
+                render.object( plane, 0,0,0 );
+                render.object( cube, 0,0,0 );
+                render.object( cube, -100,0,0 );
+                render.object( cube, -200, 0, 0 );
+                render.object( tree, 200, 0, 0);
+
+                window.requestAnimationFrame(loop);
+            }
+
+            loop();
+        })();
+    </script>
+</body>
+</html>
